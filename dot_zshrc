@@ -125,7 +125,7 @@ DISABLE_MAGIC_FUNCTIONS=true
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 
 
-EDITOR=nvim
+export EDITOR=nvim
 
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
