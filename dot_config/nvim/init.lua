@@ -6,9 +6,14 @@ vim.cmd [[ runtime! options.lua ]]
 vim.cmd [[ runtime! plugins.lua ]]
 vim.cmd [[ runtime! lsp-keymaps.lua ]]
 
-
-
-require'lspconfig'.clangd.setup{}
+require('lspconfig').clangd.setup {
+        cmd = {
+            "clangd",
+            "--background-index",
+            "--suggest-missing-includes"
+        },
+        filetypes = {"c", "cpp", "objc", "objcpp"},
+}
 -- The setup config table shows all available config options with their default values:
 require("presence"):setup({
     -- General options
