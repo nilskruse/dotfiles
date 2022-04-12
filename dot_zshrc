@@ -116,7 +116,7 @@ alias stopconda="source /opt/anaconda/bin/deactivate root"
 alias pasinks="sh ~/.scripts/pasinks.sh"
 alias sudocode="sudo code --no-sandbox --user-data-dir '/home/nils/.config/Code - OSS'"
 alias toclipboard="xclip -sel c <"
-
+#test
 
 HISTFILE=~/.config/.zsh_history
 HISTSIZE=10000
