@@ -1,6 +1,6 @@
 #! /bin/sh
 if [[ "$(hostname)" == "archdesktop" ]]; then
-        sh ~/scripts/monitors.sh &
+        sh ~/.scripts/archdesktop-monitors.sh &
         ~/.config/polybar/launch.sh & # Status bar
         xsetroot -cursor_name left_ptr & # X cursor fix
         dunst & # Notifications
