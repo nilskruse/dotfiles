@@ -1,0 +1,15 @@
+#! /bin/sh
+
+sleep 3
+string=$(pactl list sinks)
+if [[ $string != *"null_sink_for_combined_sink"* ]]; then
+  pacmd load-module module-null-sink sink_name=null_sink_for_combined_sink sink_properties=device.description="\"Null\ sink\ for\ combined\ sink\""
+fi
+
+if [[ $string != *"combined_sink_for_obs"* ]]; then
+  pacmd load-module module-combine-sink sink_name=combined_sink_for_obs  slaves=null_sink_for_combined_sink,alsa_output.usb-GuangZhou_FiiO_Electronics_Co._Ltd_FiiO_Q1_FA145408-00.analog-stereo sink_properties=device.description="\"Combined\ sink\ for\ OBS\""
+fi
+sleep 3
+#pidof obs > /dev/null || { obs --startreplaybuffer > /dev/null 2>&1 & } &
+
+
