@@ -67,7 +67,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=14;3"
 ;modules
 modules-left = bspwm
 modules-center = 
-modules-right = battery-internal battery-external pulseaudio backlight date separator bluetooth power-menu separator
+modules-right = battery-internal battery-external pulseaudio backlight date separator
 
 tray-position = ${env:TRAYPOS:}
 tray-padding = 2
