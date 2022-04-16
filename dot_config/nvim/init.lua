@@ -4,16 +4,10 @@
 -- sub-scripts
 vim.cmd [[ runtime! options.lua ]]
 vim.cmd [[ runtime! plugins.lua ]]
+require'lspconfig'.clangd.setup{}
 vim.cmd [[ runtime! lsp-keymaps.lua ]]
 
-require('lspconfig').clangd.setup {
-        cmd = {
-            "clangd",
-            "--background-index",
-            "--suggest-missing-includes"
-        },
-        filetypes = {"c", "cpp", "objc", "objcpp"},
-}
+
 -- The setup config table shows all available config options with their default values:
 require("presence"):setup({
     -- General options
@@ -25,7 +19,7 @@ require("presence"):setup({
     debounce_timeout    = 10,                         -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
     enable_line_number  = false,                      -- Displays the current line number instead of the current project
     blacklist           = {},                         -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
-    buttons             = true,                       -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
+    buttons             = false,                       -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
     file_assets         = {},                         -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
 
     -- Rich Presence text options

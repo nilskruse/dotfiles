@@ -127,6 +127,7 @@ ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 
 
 export EDITOR=nvim
+export XDG_CONFIG_HOME="$HOME/.config"
 
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
