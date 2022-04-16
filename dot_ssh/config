@@ -1,5 +1,5 @@
 AddKeysToAgent yes
-Host*
+Host *
     Identityfile ~/.ssh/github
     Identityfile ~/.ssh/gitlab
     Identityfile ~/.ssh/id_rsa
