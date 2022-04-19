@@ -5,21 +5,19 @@ killall -q polybar
 
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-TRAYSET=0
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    if [ "$m" == "DP-0" ]; then
-      TRAYPOS="right" MONITOR=$m polybar --reload example &
-      TRAYSET=1
+if [[ "$(hostname)" == "archdesktop" ]]; then
+    if type "xrandr"; then
+      for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        if [ "$m" == "DP-0" ]; then
+          TRAYPOS="right" MONITOR=$m polybar --reload example &
+        else
+          MONITOR=$m polybar --reload example &
+        fi   
+      done
     else
-      MONITOR=$m polybar --reload example &
-    fi   
-  done
+      polybar --reload example &
+    fi
 else
-  polybar --reload example &
-fi
-
-if [TRAYSET -eq 0]
-  TRAYPOS="right" MONITOR=$m polybar --reload example &
+    TRAYPOS="right" MONITOR=$m polybar --reload example &
 fi
 echo "Polybar launched..."
