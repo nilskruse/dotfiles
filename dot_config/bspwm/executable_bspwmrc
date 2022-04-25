@@ -8,6 +8,7 @@ if [[ "$(hostname)" == "archdesktop" ]]; then
         pidof sxhkd > /dev/null || { sxhkd > /dev/null 2>&1 & } & # Keyboard shortcuts
         #discord &
         flatpak run com.discordapp.Discord &
+        discord &
         steam -silent &
         spotify &
         insync start &
