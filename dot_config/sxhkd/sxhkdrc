@@ -1,4 +1,15 @@
+# brightness down
+
+XF86MonBrightnessDown
+    brightnessctl s 10%-
+
+# brightness up
+
+XF86MonBrightnessUp
+    brightnessctl s +10%
+
 #media
+
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
@@ -13,9 +24,10 @@ XF86AudioPrev
 
 XF86AudioNext
 	playerctl next
+
 #programs
 super + c
-	google-chrome-stable
+	firefox
 
 super + shift + c
 	google-chrome-stable --incognito 
