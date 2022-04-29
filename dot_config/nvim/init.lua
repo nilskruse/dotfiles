@@ -6,6 +6,7 @@ vim.cmd [[ runtime! options.lua ]]
 vim.cmd [[ runtime! plugins.lua ]]
 require'lspconfig'.clangd.setup{}
 vim.cmd [[ runtime! lsp-keymaps.lua ]]
+vim.cmd [[ autocmd vimenter * ++nested colorscheme gruvbox ]]
 
 
 -- The setup config table shows all available config options with their default values:
