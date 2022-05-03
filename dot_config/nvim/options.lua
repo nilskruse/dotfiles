@@ -10,3 +10,4 @@ o.shiftwidth     = 4
 o.relativenumber = true
 o.cursorline     = true
 o.scrolloff      = 8
+o.termguicolors  = true

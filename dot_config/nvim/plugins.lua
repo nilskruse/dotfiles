@@ -10,6 +10,10 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     Plug 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     Plug 'L3MON4D3/LuaSnip' -- Snippets plugin
+    Plug 'feline-nvim/feline.nvim'
+    Plug 'junegunn/fzf'   
+
 vim.call('plug#end')
+
 
 
