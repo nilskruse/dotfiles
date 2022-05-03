@@ -2,10 +2,10 @@
 
 
 -- sub-scripts
-vim.cmd [[ runtime! options.lua ]]
-vim.cmd [[ runtime! plugins.lua ]]
+require('options')
+require('plugins')
+require('lsp-keymaps')
 require'lspconfig'.clangd.setup{}
-vim.cmd [[ runtime! lsp-keymaps.lua ]]
 vim.cmd [[ autocmd vimenter * ++nested colorscheme gruvbox ]]
 
 
