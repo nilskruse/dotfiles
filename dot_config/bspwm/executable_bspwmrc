@@ -1,12 +1,13 @@
 #! /bin/sh
+~/.config/polybar/launch.sh "~/.config/polybar/config.ini" & # Status bar
+xsetroot -cursor_name left_ptr & # X cursor fix
+feh --bg-fill ~/images/wallpaper.jpg & # Wallpaper
+pidof sxhkd > /dev/null || { sxhkd > /dev/null 2>&1 & } & # Keyboard shortcuts
+
+
 if [[ "$(hostname)" == "archdesktop" ]]; then
         sh ~/.scripts/archdesktop-monitors.sh &
-        ~/.config/polybar/launch.sh "~/.config/polybar/config.ini" & # Status bar
-        xsetroot -cursor_name left_ptr & # X cursor fix
         dunst & # Notifications
-        feh --bg-fill ~/images/wallpaper.jpg & # Wallpaper
-        pidof sxhkd > /dev/null || { sxhkd > /dev/null 2>&1 & } & # Keyboard shortcuts
-        #discord &
         flatpak run com.discordapp.Discord &
         discord &
         steam -silent &
@@ -34,16 +35,10 @@ if [[ "$(hostname)" == "archdesktop" ]]; then
         bspc rule -a "Ferdi" desktop=6
         bspc rule -a "obs" desktop=10 
 else
-        #picom --experimental-backends & # Compositor
-        ~/.config/polybar/launch.sh & # Status bar
-        xsetroot -cursor_name left_ptr & # X cursor fix
         dunst & # Notifications
-        feh --bg-fill ~/images/wallpaper.jpg & # Wallpaper
-        sxhkd & # Keyboard shortcuts
         redshift-gtk &
         nm-applet &
         dropbox &
-        #xss-lock -- betterlockscreen -l -t "SGVsbG8sIGN1cmlvdXMgb25l" & # Lockscreen handler
 
         bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
 
