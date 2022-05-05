@@ -3,11 +3,10 @@
 xsetroot -cursor_name left_ptr & # X cursor fix
 feh --bg-fill ~/images/wallpaper.jpg & # Wallpaper
 pidof sxhkd > /dev/null || { sxhkd > /dev/null 2>&1 & } & # Keyboard shortcuts
-
+dunst & # Notifications
 
 if [[ "$(hostname)" == "archdesktop" ]]; then
         sh ~/.scripts/archdesktop-monitors.sh &
-        dunst & # Notifications
         flatpak run com.discordapp.Discord &
         discord &
         steam -silent &
@@ -35,7 +34,6 @@ if [[ "$(hostname)" == "archdesktop" ]]; then
         bspc rule -a "Ferdi" desktop=6
         bspc rule -a "obs" desktop=10 
 else
-        dunst & # Notifications
         redshift-gtk &
         nm-applet &
         dropbox &
