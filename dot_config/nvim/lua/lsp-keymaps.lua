@@ -1,3 +1,5 @@
+require'lspconfig'.clangd.setup{}
+
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
