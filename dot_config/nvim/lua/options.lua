@@ -11,3 +11,4 @@ o.relativenumber = true
 o.cursorline     = true
 o.scrolloff      = 8
 o.termguicolors  = true
+o.nu             = true
