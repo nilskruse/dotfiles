@@ -3,16 +3,20 @@
 xsetroot -cursor_name left_ptr & # X cursor fix
 feh --bg-fill ~/images/wallpaper.jpg & # Wallpaper
 pidof sxhkd > /dev/null || { sxhkd > /dev/null 2>&1 & } & # Keyboard shortcuts
+
 dunst & # Notifications
+redshift-gtk &
+nm-applet &
+dropbox &
+flatpak run com.discordapp.Discord &
+discord &
+steam -silent &
+spotify &
+insync start &
+/usr/bin/lxqt-policykit-agent &
 
 if [[ "$(hostname)" == "archdesktop" ]]; then
         sh ~/.scripts/archdesktop-monitors.sh &
-        flatpak run com.discordapp.Discord &
-        discord &
-        steam -silent &
-        spotify &
-        insync start &
-        /usr/bin/lxqt-policykit-agent &
 
         bspc monitor DP-0 -d 1 2 3 4
         bspc monitor DVI-D-0 -d 5 6 7
@@ -24,20 +28,12 @@ if [[ "$(hostname)" == "archdesktop" ]]; then
         bspc config split_ratio          0.52
         bspc config borderless_monocle   true
         bspc config gapless_monocle      true
-        # bspc config focus_follows_pointer true
-
-        # bspc config single_monocle	 true
-
 
         bspc rule -a "TeamSpeak 3" desktop=5
         bspc rule -a "discord" desktop=5
         bspc rule -a "Ferdi" desktop=6
         bspc rule -a "obs" desktop=10 
 else
-        redshift-gtk &
-        nm-applet &
-        dropbox &
-
         bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
 
         bspc config border_width         0
@@ -46,12 +42,8 @@ else
         bspc config split_ratio          0.52
         bspc config borderless_monocle   true
         bspc config gapless_monocle      true
-        # bspc config focus_follows_pointer true
 
-        # bspc config single_monocle	 true
         bspc config remove_disabled_monitors true
-
         bspc config remove_unplugged_monitors true
-
 fi
 
