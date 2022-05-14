@@ -1,20 +1,4 @@
 #! /bin/sh
-~/.config/polybar/launch.sh "~/.config/polybar/config.ini" & # Status bar
-xsetroot -cursor_name left_ptr & # X cursor fix
-feh --bg-fill ~/images/wallpaper.jpg & # Wallpaper
-pidof sxhkd > /dev/null || { sxhkd > /dev/null 2>&1 & } & # Keyboard shortcuts
-
-dunst & # Notifications
-redshift-gtk &
-nm-applet &
-dropbox &
-flatpak run com.discordapp.Discord &
-discord &
-steam -silent &
-spotify &
-insync start &
-/usr/bin/lxqt-policykit-agent &
-
 if [[ "$(hostname)" == "archdesktop" ]]; then
         sh ~/.scripts/archdesktop-monitors.sh &
 
@@ -46,4 +30,21 @@ else
         bspc config remove_disabled_monitors true
         bspc config remove_unplugged_monitors true
 fi
+
+xsetroot -cursor_name left_ptr & # X cursor fix
+feh --bg-fill ~/images/wallpaper.jpg & # Wallpaper
+pidof sxhkd > /dev/null || { sxhkd > /dev/null 2>&1 & } & # Keyboard shortcuts
+
+dunst & # Notifications
+redshift-gtk &
+nm-applet &
+dropbox &
+flatpak run com.discordapp.Discord &
+discord &
+steam -silent &
+spotify &
+insync start &
+/usr/bin/lxqt-policykit-agent &
+
+~/.config/polybar/launch.sh "~/.config/polybar/config.ini" & # Status bar
 
