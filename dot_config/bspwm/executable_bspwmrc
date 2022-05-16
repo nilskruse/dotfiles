@@ -2,6 +2,8 @@
 if [[ "$(hostname)" == "archdesktop" ]]; then
         sh ~/.scripts/archdesktop-monitors.sh &
 
+        flatpak run com.discordapp.Discord &
+        discord &
         bspc monitor DP-0 -d 1 2 3 4
         bspc monitor DVI-D-0 -d 5 6 7
         bspc monitor DP-3 -d 8 9 10
@@ -39,8 +41,6 @@ dunst & # Notifications
 redshift-gtk &
 nm-applet &
 dropbox &
-flatpak run com.discordapp.Discord &
-discord &
 steam -silent &
 spotify &
 insync start &
