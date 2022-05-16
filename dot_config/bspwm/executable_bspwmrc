@@ -46,5 +46,6 @@ spotify &
 insync start &
 /usr/bin/lxqt-policykit-agent &
 
-~/.config/polybar/launch.sh "~/.config/polybar/config.ini" & # Status bar
+cd ~
+~/.config/polybar/launch.sh "~/.config/polybar/config.ini" "example" & # Status bar
 
