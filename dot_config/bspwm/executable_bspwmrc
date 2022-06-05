@@ -45,7 +45,7 @@ steam -silent &
 spotify &
 insync start &
 /usr/bin/lxqt-policykit-agent &
-
+wmname LG3D &
 cd ~
 ~/.config/polybar/launch.sh "~/.config/polybar/config.ini" "example" & # Status bar
 
