@@ -1,6 +1,7 @@
 require'lspconfig'.clangd.setup{}
-require'lspconfig'.jedi_language_server.setup{}
--- require'lspconfig'.pyright.setup{}
+--require'lspconfig'.jedi_language_server.setup{}
+--require'lspconfig'.pyright.setup{}
+require'lspconfig'.pylsp.setup{}
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -38,7 +39,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = {'clangd', 'jedi_language_server'}
+local servers = {'clangd', 'pylsp'}
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,

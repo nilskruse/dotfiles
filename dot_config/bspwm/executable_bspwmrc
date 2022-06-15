@@ -32,7 +32,7 @@ else
         bspc config remove_disabled_monitors true
         bspc config remove_unplugged_monitors true
 fi
-
+bspc rule -a KSP.x86_64 state=pseudo_tiled 
 xsetroot -cursor_name left_ptr & # X cursor fix
 feh --bg-fill ~/images/wallpaper.jpg & # Wallpaper
 pidof sxhkd > /dev/null || { sxhkd > /dev/null 2>&1 & } & # Keyboard shortcuts
