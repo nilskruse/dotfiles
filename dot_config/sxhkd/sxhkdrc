@@ -27,7 +27,7 @@ XF86AudioNext
 
 #programs
 super + c
-	firefox
+	librewolf
 
 super + shift + c
 	google-chrome-stable --incognito 
